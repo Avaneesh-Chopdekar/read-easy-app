@@ -10,6 +10,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.slider.Slider
 
 
 class MainActivity : AppCompatActivity() {
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             input.layoutParams = params
             container.addView(input)
 
-            var dialog = MaterialAlertDialogBuilder(this)
+            val dialog = MaterialAlertDialogBuilder(this)
                 .setTitle("Edit Text")
                 .setView(container)
                 .setNegativeButton("Clear",null)

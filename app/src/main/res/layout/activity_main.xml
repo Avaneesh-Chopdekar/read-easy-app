@@ -37,7 +37,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <com.google.android.material.slider.Slider
+    <SeekBar
         android:id="@+id/sbTextSize"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
