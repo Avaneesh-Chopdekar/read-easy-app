@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val editBtn = findViewById<Button>(R.id.btnEditText)
-        val clearBtn = findViewById<Button>(R.id.btnClearText)
+        val editBtn = findViewById<ImageButton>(R.id.ibEdit)
+        val clearBtn = findViewById<ImageButton>(R.id.ibClear)
         val sbTextSize = findViewById<SeekBar>(R.id.sbTextSize)
         val tvText = findViewById<TextView>(R.id.tvText)
 
