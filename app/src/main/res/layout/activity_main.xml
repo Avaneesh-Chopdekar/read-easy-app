@@ -37,13 +37,16 @@
         </LinearLayout>
     </ScrollView>
 
-    <SeekBar
+    <com.google.android.material.slider.Slider
         android:id="@+id/sbTextSize"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/app_name"
+        android:valueFrom="20.0"
+        android:valueTo="200.0"
+        app:labelBehavior="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ibClear"
         app:layout_constraintStart_toEndOf="@+id/ibEdit"
@@ -51,9 +54,9 @@
 
     <ImageButton
         android:id="@+id/ibEdit"
-        style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/edit"
         android:minWidth="48dp"
         android:minHeight="48dp"
@@ -64,11 +67,12 @@
 
     <ImageButton
         android:id="@+id/ibClear"
-        style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/clear"
         android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView"

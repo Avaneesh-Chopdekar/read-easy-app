@@ -1,6 +1,5 @@
 package com.example.easyread
 
-import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -10,6 +9,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.slider.Slider
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,26 +18,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val editBtn = findViewById<ImageButton>(R.id.ibEdit)
         val clearBtn = findViewById<ImageButton>(R.id.ibClear)
-        val sbTextSize = findViewById<SeekBar>(R.id.sbTextSize)
+        val sbTextSize = findViewById<Slider>(R.id.sbTextSize)
         val tvText = findViewById<TextView>(R.id.tvText)
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            sbTextSize.progress = 20
+        sbTextSize.addOnChangeListener { _, value, _ ->
+            tvText.textSize = value
         }
-        sbTextSize.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                sbTextSize.max = 200
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    sbTextSize.min = 20
-                }
-                tvText.textSize = sbTextSize.progress.toFloat()
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-
-        })
 
         editBtn.setOnClickListener {
             val input = EditText(this)
